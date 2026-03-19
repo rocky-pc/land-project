@@ -1,0 +1,41 @@
+﻿node.exe : D:\TFWS-Projects\land-project\n
+ode_modules\@babel\core\lib\transformation
+\file\file.js:1
+At C:\Program Files\nodejs\npx.ps1:29 
+char:3
++   & $NODE_EXE $NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (D:\TFWS-Project...\file\file.js:1  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+= -1 && range.end <= 
+statements[endNodeIndex].getStart()) {
+^
+
+SyntaxError: Unexpected token '='
+    at wrapSafe 
+(node:internal/modules/cjs/loader:1486:18)
+    at Module._compile 
+(node:internal/modules/cjs/loader:1528:20)
+    at Object..js 
+(node:internal/modules/cjs/loader:1706:10)
+    at Module.load 
+(node:internal/modules/cjs/loader:1289:32)
+    at Function._load 
+(node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync 
+(node:diagnostics_channel:322:14)
+    at wrapModuleLoad 
+(node:internal/modules/cjs/loader:220:24)
+    at Module.require 
+(node:internal/modules/cjs/loader:1311:12)
+    at require 
+(node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\TFWS-Project
+s\land-project\node_modules\@babel\core\li
+b\index.js:171:13)
+
+Node.js v22.14.0

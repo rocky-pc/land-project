@@ -16,7 +16,7 @@ const liveFeeds = [
   },
   {
     id: 2,
-    videoId: "https://youtu.be/ozyUyazWIqA?si=Wu0CvTfsUeiCbv0K", // Replace with actual YouTube video ID
+    videoId: "https://youtu.be/2OFDeR4-FUs?si=UJgsby_DySk9LcPt", // Replace with actual YouTube video ID
     title: "Entry Gate",
     location: "North Entrance",
     coordinates: { lat: "12.9720° N", lng: "77.5950° E" }

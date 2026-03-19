@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { AuthProvider } from "@/lib/auth-context";
 
 const interFont = Inter({
   variable: "--font-inter",
@@ -29,8 +30,10 @@ export default function RootLayout({
       className={`${interFont.variable} ${playfairFont.variable} antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans pt-[72px]">
-        <Navbar />
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import { useAuth } from '@/lib/auth-context';
 import { Lock, CheckCircle, X, Leaf, ShieldCheck, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function LoginModal({ className = "" }: { className?: string }) {
+export default function LoginModal({ className = "", onClose }: { className?: string, onClose?: () => void }) {
   const { user, login, logout, isLoading } = useAuth();
   const [plotId, setPlotId] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
@@ -384,9 +384,9 @@ export default function LoginModal({ className = "" }: { className?: string }) {
                       <h2 className="lm-title">Access Your <em>Private View</em></h2>
                       <p className="lm-sub">Enter your unique Plot ID to unlock land data & live CCTV.</p>
                     </div>
-                    <button className="lm-close">
-                      <X style={{ width: 14, height: 14 }} />
-                    </button>
+                       <button className="lm-close" onClick={() => onClose && onClose()}>
+                         <X style={{ width: 14, height: 14 }} />
+                       </button>
                   </div>
 
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

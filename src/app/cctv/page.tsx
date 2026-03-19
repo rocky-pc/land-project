@@ -9,21 +9,21 @@ import LiveStreamPlayer from "@/components/LiveStreamPlayer";
 const liveFeeds = [
   {
     id: 1,
-    videoId: "YourLink1", // Replace with actual YouTube video ID
+    videoId: "https://youtu.be/ozyUyazWIqA?si=Wu0CvTfsUeiCbv0K", // Replace with actual YouTube video ID
     title: "Main Plot View",
     location: "Central Survey Zone",
     coordinates: { lat: "12.9716° N", lng: "77.5946° E" }
   },
   {
     id: 2,
-    videoId: "YourLink2", // Replace with actual YouTube video ID
+    videoId: "https://youtu.be/ozyUyazWIqA?si=Wu0CvTfsUeiCbv0K", // Replace with actual YouTube video ID
     title: "Entry Gate",
     location: "North Entrance",
     coordinates: { lat: "12.9720° N", lng: "77.5950° E" }
   },
   {
     id: 3,
-    videoId: "YourLink3", // Replace with actual YouTube video ID
+    videoId: "https://youtu.be/ozyUyazWIqA?si=Wu0CvTfsUeiCbv0K", // Replace with actual YouTube video ID
     title: "North Boundary",
     location: "Perimeter Fence Line",
     coordinates: { lat: "12.9725° N", lng: "77.5955° E" }

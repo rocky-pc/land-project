@@ -232,16 +232,27 @@ export default function Home() {
         }
         @keyframes hb-blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
 
-        /* Main title */
-        .hero-title {
-          font-family: 'Playfair Display', serif;
-          font-size: clamp(3rem, 9vw, 7.5rem);
-          font-weight: 700;
-          color: #ecfdf5;
-          line-height: 1.0;
-          letter-spacing: -0.035em;
-          margin-bottom: 0.4rem;
-        }
+         /* Main title */
+         .hero-title {
+           font-family: 'Playfair Display', serif;
+           font-size: clamp(3rem, 9vw, 7.5rem);
+           font-weight: 700;
+           color: #ecfdf5;
+           line-height: 1.0;
+           letter-spacing: -0.035em;
+           margin-bottom: 0.4rem;
+         }
+         .hero-title-tamil {
+           font-family: 'Playfair Display', serif;
+           font-size: clamp(2.5rem, 7vw, 6rem);
+           font-weight: 700;
+           color: #ecfdf5;
+           line-height: 1.2;
+           letter-spacing: -0.02em;
+           text-align: center;
+           display: block;
+           margin-bottom: 0.2rem;
+         }
         .hero-title-em {
           display: block;
           font-style: italic;
@@ -741,10 +752,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            >
-              உங்கள் நிலம் உங்கள் கையில்
-              <em className="hero-title-em">Your Land in Your Hands</em>
-              <span className="hero-title-ta">உங்கள் கையில்</span>
+             >
+               <div className="hero-title-tamil">
+                 உங்கள் நிலம்<br />
+                 உங்கள் கையில்
+               </div>
+               <em className="hero-title-em">Your Land in Your Hands</em>
+              {/* <span className="hero-title-ta">உங்கள் கையில்</span> */}
             </motion.h1>
 
             {/* Subtitle */}

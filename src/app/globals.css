@@ -81,6 +81,7 @@
   --sidebar-accent-foreground: #1B4332;
   --sidebar-border: #D8E2DC;
   --sidebar-ring: #1B4332;
+  --grassland-image: url('/grassland.jpg');
 }
 
 .dark {
@@ -123,6 +124,18 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: var(--grassland-image);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 100, 0, 0.2); /* green-900/20 */
+    pointer-events: none;
   }
   html {
     @apply font-sans;
@@ -133,9 +146,19 @@
   
   /* Glassmorphism utilities */
   .glass {
-    @apply bg-card backdrop-blur-md shadow-sm border border-border/50;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0)) 1;
+    @apply shadow-sm;
   }
   .glass-lg {
-    @apply bg-card backdrop-blur-xl shadow-lg border border-border/50;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0)) 1;
+    @apply shadow-lg;
   }
 }

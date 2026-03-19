@@ -3,10 +3,34 @@
 import { useState } from "react";
 import { Activity, Clock, Sun, CloudRain, ShieldCheck, Disc2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LiveStreamPlayer from "@/components/LiveStreamPlayer";
+
+// Array of live feeds with YouTube video IDs and metadata
+const liveFeeds = [
+  {
+    id: 1,
+    videoId: "YourLink1", // Replace with actual YouTube video ID
+    title: "Main Plot View",
+    location: "Central Survey Zone",
+    coordinates: { lat: "12.9716° N", lng: "77.5946° E" }
+  },
+  {
+    id: 2,
+    videoId: "YourLink2", // Replace with actual YouTube video ID
+    title: "Entry Gate",
+    location: "North Entrance",
+    coordinates: { lat: "12.9720° N", lng: "77.5950° E" }
+  },
+  {
+    id: 3,
+    videoId: "YourLink3", // Replace with actual YouTube video ID
+    title: "North Boundary",
+    location: "Perimeter Fence Line",
+    coordinates: { lat: "12.9725° N", lng: "77.5955° E" }
+  }
+];
 
 export default function CCTVPage() {
-  const [isLive, setIsLive] = useState(true);
-
   return (
     <main className="flex-1 w-full bg-background px-6 py-24 md:py-32">
       <div className="max-w-7xl mx-auto">
@@ -27,58 +51,19 @@ export default function CCTVPage() {
           </div>
         </div>
 
-        {/* Video Player */}
-        <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden glass-lg shadow-2xl mb-8 group">
-          <div className="absolute inset-0 bg-neutral-900 flex items-center justify-center">
-            {/* Placeholder Image/Video bg */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590483736622-398541c4a179?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-60 mix-blend-luminosity filter blur-xs" />
-          </div>
-
-          {/* Overlays */}
-          <div className="absolute top-6 left-6 flex items-center gap-4">
-            {isLive ? (
-              <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/10">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-                </span>
-                <span className="font-semibold tracking-wider text-sm uppercase">Live</span>
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/10">
-                <Clock className="size-4" />
-                <span className="font-semibold tracking-wider text-sm">Timelapse</span>
-              </div>
-            )}
-            <div className="hidden md:flex items-center gap-2 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/10 text-xs font-mono">
-              <Disc2 className="size-3 animate-spin duration-3000" /> REC
-            </div>
-          </div>
-
-          <div className="absolute top-6 right-6 hidden md:flex flex-col items-end gap-2 text-white/80 font-mono text-xs bg-black/40 p-3 rounded-xl backdrop-blur-sm border border-white/10">
-            <div>CAM-03 (NORTH EAST)</div>
-            <div>BITRATE: 4.2 MBPS</div>
-            <div>FPS: 29.97</div>
-            <div>2026-03-19 16:34:36 IST</div>
-          </div>
-
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 transition-opacity opacity-0 group-hover:opacity-100">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className={`rounded-full hover:bg-white/20 hover:text-white ${isLive ? 'bg-white/20 text-white' : 'text-white/60'}`}
-              onClick={() => setIsLive(true)}
-            >
-              Live Stream
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className={`rounded-full hover:bg-white/20 hover:text-white ${!isLive ? 'bg-white/20 text-white' : 'text-white/60'}`}
-              onClick={() => setIsLive(false)}
-            >
-              Past 24H
-            </Button>
+        {/* Video Feeds Grid */}
+        <div className="grid gap-6 mb-8">
+          {/* Responsive grid: 1col (sm), 2col (md), 3col (lg) */}
+          <div className="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid">
+            {liveFeeds.map(feed => (
+              <LiveStreamPlayer 
+                key={feed.id}
+                videoId={feed.videoId}
+                location={feed.location}
+                coordinates={feed.coordinates}
+                className="rounded-[2rem] overflow-hidden shadow-2xl"
+              />
+            ))}
           </div>
         </div>
 
@@ -105,7 +90,6 @@ export default function CCTVPage() {
             </div>
           </div>
         </div>
-
       </div>
     </main>
   );

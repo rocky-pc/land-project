@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Lock, CheckCircle, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function LoginModal() {
+export default function LoginModal({ className = "" }: { className?: string }) {
   const { user, login, logout, isLoading } = useAuth();
   const [plotId, setPlotId] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);

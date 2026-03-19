@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { 
-  DollarSign, 
-  PoundSterling, 
-  IndianRupee, 
-  ArrowLeftRight 
+import {
+  DollarSign,
+  PoundSterling,
+  IndianRupee,
+  ArrowLeftRight,
 } from "lucide-react";
+import LoginModal from "@/components/LoginModal";
 
 export function Navbar() {
   const [currency, setCurrency] = useState('INR');
@@ -97,6 +98,9 @@ export function Navbar() {
             ))}
           </div>
         </div>
+
+        {/* Login Button */}
+        <LoginModal className="hidden md:block" />
 
         <Link href="/contact">
           <Button variant="default" className="rounded-full">Contact Concierge</Button>

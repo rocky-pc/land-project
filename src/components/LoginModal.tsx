@@ -54,7 +54,7 @@ export default function LoginModal({ className = "" }: { className?: string }) {
     <>
       {/* Authenticated View */}
       {isLoggedIn && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -92,7 +92,7 @@ export default function LoginModal({ className = "" }: { className?: string }) {
       
       {/* Login Modal */}
       {!isLoggedIn && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <AnimatePresence>
             {isAuthenticated ? (
               <motion.div

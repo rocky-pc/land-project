@@ -6,21 +6,24 @@ import LiveStreamPlayer from "@/components/LiveStreamPlayer";
 const liveFeeds = [
   {
     id: 1,
-    videoId: "ozyUyazWIqA",
+    videoId: "VID-20260320-WA0015",
+    orientation: "landscape" as const,
     title: "Main Plot View",
     location: "Central Survey Zone",
     coordinates: { lat: "12.9716° N", lng: "77.5946° E" },
   },
   {
     id: 2,
-    videoId: "2OFDeR4-FUs",
+    videoId: "VID-20260320-WA0017",
+    orientation: "portrait" as const,
     title: "Entry Gate",
     location: "North Entrance",
     coordinates: { lat: "12.9720° N", lng: "77.5950° E" },
   },
   {
     id: 3,
-    videoId: "ozyUyazWIqA",
+    videoId: "VID-20260320-WA0006",
+    orientation: "square" as const,
     title: "North Boundary",
     location: "Perimeter Fence Line",
     coordinates: { lat: "12.9725° N", lng: "77.5955° E" },
@@ -413,11 +416,12 @@ export default function CCTVPage() {
                   <span className="cctv-feed-num">CAM·{String(feed.id).padStart(2, '0')}</span>
                   <span className="cctv-feed-name">{feed.title}</span>
                 </div>
-                <LiveStreamPlayer
-                  videoId={feed.videoId}
-                  location={feed.location}
-                  coordinates={feed.coordinates}
-                />
+                 <LiveStreamPlayer
+                   videoId={feed.videoId}
+                   orientation={feed.orientation}
+                   location={feed.location}
+                   coordinates={feed.coordinates}
+                 />
               </div>
             ))}
           </div>

@@ -3,6 +3,7 @@ import { Maximize2, Volume2, VolumeX, Radio } from 'lucide-react';
 
 interface LiveStreamPlayerProps {
   videoId: string;
+  orientation: 'landscape' | 'portrait' | 'square';
   location: string;
   coordinates: { lat: string; lng: string };
   className?: string;
@@ -10,12 +11,26 @@ interface LiveStreamPlayerProps {
 
 export default function LiveStreamPlayer({
   videoId,
+  orientation,
   location,
   coordinates,
   className,
 }: LiveStreamPlayerProps) {
   const [muted, setMuted] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
+
+  const getAspectRatio = (): string => {
+    switch (orientation) {
+      case 'landscape':
+        return '16/9';
+      case 'portrait':
+        return '9/16';
+      case 'square':
+        return '1/1';
+      default:
+        return '16/9';
+    }
+  };
 
   return (
     <>
@@ -42,18 +57,19 @@ export default function LiveStreamPlayer({
         }
 
         /* Video wrapper */
-        .lsp-video {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 16/9;
-        }
-        .lsp-iframe {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          border: none;
-        }
+  .lsp-video {
+    position: relative;
+    width: 100%;
+    /* Aspect ratio will be set dynamically via inline style */
+  }
+  .lsp-video-tag {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+  }
 
         /* Vignette overlay on video */
         .lsp-vignette {
@@ -241,16 +257,17 @@ export default function LiveStreamPlayer({
         <div className="lsp-shimmer" />
 
         {/* Video */}
-        <div className="lsp-video">
-          <iframe
-            className="lsp-iframe"
-            title="Live Stream"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${muted ? 1 : 0}&controls=0&modestbranding=1&showinfo=0&loop=1&playlist=${videoId}`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <div className="lsp-vignette" />
-          <div className="lsp-scanline" />
+       <div className="lsp-video" style={{ aspectRatio: getAspectRatio() }}>
+           <video
+             className="lsp-video-tag"
+             src={`/videos/${orientation}/${videoId}.mp4`}
+             autoPlay
+             muted={muted}
+             loop
+             playsInline
+           />
+           <div className="lsp-vignette" />
+           <div className="lsp-scanline" />
 
           {/* Corner brackets */}
           <div className="lsp-corner tl" />

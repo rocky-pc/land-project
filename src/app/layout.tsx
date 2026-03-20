@@ -33,12 +33,12 @@ const playfairFont = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "உங்கள் நிலம் உங்கள் கையில் | Your Land in Your Hands",
+  title: "Ungal Nilam Ungal Kaiyil | Your Land in Your Hands",
   description:
     "High-end Eco-Luxury real estate plot project in Tamil Nadu. Live CCTV monitoring, soil analytics, and verified legal documents — for global NRI investors.",
   keywords: ["Tamil Nadu land", "NRI investment", "eco-luxury plots", "CCTV land monitoring"],
   openGraph: {
-    title: "உங்கள் நிலம் உங்கள் கையில்",
+    title: "Ungal Nilam Ungal Kaiyil",
     description: "High-end Eco-Luxury real estate plot project in India.",
     type: "website",
   },

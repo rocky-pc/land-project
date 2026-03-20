@@ -949,7 +949,7 @@ export default function Home() {
         {/* ── Footer strip ── */}
         <div className="home-footer">
           <div className="hf-dot" />
-          <span>உங்கள் நிலம் உங்கள் கையில்</span>
+          <span>Ungal Nilam Ungal Kaiyil</span>
           <span className="hf-sep">·</span>
           <span>Tamil Nadu · India</span>
           <span className="hf-sep">·</span>

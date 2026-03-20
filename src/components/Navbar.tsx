@@ -342,8 +342,8 @@ export function Navbar() {
               <Leaf style={{ width: 15, height: 15 }} />
             </div>
             <div className="nb-logo-text">
-              உங்கள் நிலம் உங்கள் கையில்
-              <span className="nb-logo-en">Your Land, Your Hands</span>
+              Real Consultant Services 
+              <span className="nb-logo-en">UNUK | Ungal Nilam Ungal Kaiyil</span>
             </div>
           </Link>
 

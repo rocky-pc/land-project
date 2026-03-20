@@ -274,7 +274,7 @@ export default function Home() {
         .hero-sub {
           font-family: 'Syne', sans-serif;
           font-size: clamp(0.88rem, 1.8vw, 1.1rem);
-          color: #374151;
+          color: #f8fafc;
           line-height: 1.75;
           max-width: 560px;
           margin: 1.6rem auto 2.4rem;

@@ -31,6 +31,7 @@ const navLinks = [
   { href: "/cctv", label: "Live CCTV" },
   { href: "/analytics", label: "Plot Analytics" },
   { href: "/portal", label: "Investor Portal" },
+  { href: "/district-scatter-map", label: "District Map" },
 ];
 
 /* Tiny dropdown hook */

@@ -321,30 +321,37 @@ export default function LoginModal({ className = "", onClose }: { className?: st
           transition={{ duration: 0.25 }}
         >
           {/* Logged in — access granted */}
-          {isLoggedIn ? (
-            <motion.div
-              className="lm-card"
-              initial={{ scale: 0.94, opacity: 0, y: 16 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.35, type: 'spring', stiffness: 200, damping: 24 }}
-            >
-              <div className="lm-blob" />
-              <div className="lm-verified-icon">
-                <ShieldCheck style={{ width: 26, height: 26 }} />
-              </div>
-              <div className="lm-verified-title">Access Granted</div>
-              <div className="lm-verified-name">Welcome back, {user.name}</div>
-              <div className="lm-verified-id">PLOT · {user.plotId}</div>
-              <div className="lm-divider" />
-              <p style={{ fontSize: '0.78rem', color: '#374151', textAlign: 'center', lineHeight: 1.65, marginBottom: '1.2rem' }}>
-                Your private land data and CCTV feeds are now accessible.
-              </p>
-              <button className="lm-logout-btn" onClick={handleLogout}>
-                <LogOut style={{ width: 14, height: 14 }} />
-                Sign out
-              </button>
-            </motion.div>
+           {isLoggedIn ? (
+             <motion.div
+               className="lm-card"
+               initial={{ scale: 0.94, opacity: 0, y: 16 }}
+               animate={{ scale: 1, opacity: 1, y: 0 }}
+               exit={{ scale: 0.94, opacity: 0 }}
+               transition={{ duration: 0.35, type: 'spring', stiffness: 200, damping: 24 }}
+             >
+               <div className="lm-blob" />
+                <div className="lm-head">
+                  <div className="lm-icon-wrap">
+                    <ShieldCheck className="lm-icon" />
+                  </div>
+                  <div>
+                    <h2 className="lm-title">Access Granted</h2>
+                    <p className="lm-sub">Welcome back, {user.name}</p>
+                  </div>
+                  <button className="lm-close" onClick={() => onClose && onClose()}>
+                    <X style={{ width: 14, height: 14 }} />
+                  </button>
+                </div>
+               <div className="lm-verified-id">PLOT · {user.plotId}</div>
+               <div className="lm-divider" />
+               <p style={{ fontSize: '0.78rem', color: '#374151', textAlign: 'center', lineHeight: 1.65, marginBottom: '1.2rem' }}>
+                 Your private land data and CCTV feeds are now accessible.
+               </p>
+               <button className="lm-logout-btn" onClick={handleLogout}>
+                 <LogOut style={{ width: 14, height: 14 }} />
+                 Sign out
+               </button>
+             </motion.div>
           ) : (
             <AnimatePresence mode="wait">
               {/* Verifying state */}

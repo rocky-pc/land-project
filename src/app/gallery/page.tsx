@@ -1,17 +1,19 @@
-import Image from "next/image";
-
 export default function GalleryPage() {
-  const landscapeImages = [
-    { id: 1, src: "/images/landscape/IMG-20260320-WA0003.jpg", alt: "Landscape view 1" },
-    { id: 2, src: "/images/landscape/IMG-20260320-WA0004.jpg", alt: "Landscape view 2" },
-    { id: 3, src: "/images/landscape/IMG-20260320-WA0009.jpg", alt: "Landscape view 3" },
-    { id: 4, src: "/images/landscape/IMG-20260320-WA0012.jpg", alt: "Landscape view 4" },
-  ];
-
-  const portraitImages = [
-    { id: 1, src: "/images/portrait/IMG-20260320-WA0005.jpg", alt: "Portrait view 1" },
-    { id: 2, src: "/images/portrait/IMG-20260320-WA0011.jpg", alt: "Portrait view 2" },
-    { id: 3, src: "/images/portrait/IMG-20260320-WA0013.jpg", alt: "Portrait view 3" },
+  const videos = [
+    { id: 1, src: "/videos/landscape/VID-20260320-WA0015.mp4", alt: "Landscape view" },
+    { id: 2, src: "/videos/portrait/VID-20260320-WA0017.mp4", alt: "Portrait view" },
+    { id: 3, src: "/videos/portrait/VID-20260320-WA0023.mp4", alt: "Portrait view" },
+    { id: 4, src: "/videos/square/VID-20260320-WA0006.mp4", alt: "Square view" },
+    { id: 5, src: "/videos/square/VID-20260320-WA0007.mp4", alt: "Square view" },
+    { id: 6, src: "/videos/square/VID-20260320-WA0014.mp4", alt: "Square view" },
+    { id: 7, src: "/videos/square/VID-20260320-WA0016.mp4", alt: "Square view" },
+    { id: 8, src: "/videos/square/VID-20260320-WA0018.mp4", alt: "Square view" },
+    { id: 9, src: "/videos/square/VID-20260320-WA0019.mp4", alt: "Square view" },
+    { id: 10, src: "/videos/square/VID-20260320-WA0020.mp4", alt: "Square view" },
+    { id: 11, src: "/videos/square/VID-20260320-WA0021.mp4", alt: "Square view" },
+    { id: 12, src: "/videos/square/VID-20260320-WA0022.mp4", alt: "Square view" },
+    { id: 13, src: "/videos/square/VID-20260320-WA0024.mp4", alt: "Square view" },
+    { id: 14, src: "/videos/square/VID-20260320-WA0025.mp4", alt: "Square view" }
   ];
 
   return (
@@ -122,39 +124,31 @@ export default function GalleryPage() {
           background: linear-gradient(90deg, transparent, #4ade80, transparent);
         }
 
-        /* Image grid */
-        .image-grid {
+        /* Video grid */
+        .video-grid {
           display: grid;
           gap: 1.5rem;
           margin-bottom: 3rem;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         }
-        .landscape-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-        .portrait-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-
-        .image-card {
+        .video-card {
           border-radius: 20px;
           overflow: hidden;
           border: 1px solid rgba(34,197,94,0.12);
           backdrop-filter: blur(8px);
           background: rgba(6,20,9,0.4);
-          transition: transform 0.3s, border-color 0.3s;
+          height: 200px;
         }
-        .image-card:hover {
-          transform: translateY(-4px);
-          border-color: rgba(74,222,128,0.25);
-        }
-
-        .image-card img {
+        .video-card video {
           width: 100%;
-          height: auto;
-          display: block;
-          aspect-ratio: attr(width) / attr(height);
+          height: 100%;
           object-fit: cover;
+          background: #000;
         }
 
         /* Responsive adjustments */
         @media (max-width: 640px) {
-          .landscape-grid, .portrait-grid {
+          .video-grid {
             grid-template-columns: 1fr;
           }
         }
@@ -177,37 +171,12 @@ export default function GalleryPage() {
             </div>
           </header>
 
-          {/* Landscape Images Section */}
           <section>
-            <h2 className="section-title">Landscape Views</h2>
-            <div className="image-grid landscape-grid">
-              {landscapeImages.map((img) => (
-                <div key={img.id} className="image-card">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 320px"
-                    priority
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Portrait Images Section */}
-          <section>
-            <h2 className="section-title">Portrait Views</h2>
-            <div className="image-grid portrait-grid">
-              {portraitImages.map((img) => (
-                <div key={img.id} className="image-card">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 240px"
-                    priority
-                  />
+            <h2 className="section-title">Video Gallery</h2>
+            <div className="video-grid">
+              {videos.map((video) => (
+                <div key={video.id} className="video-card">
+                  <video src={video.src} controls playsInline aria-label={video.alt} />
                 </div>
               ))}
             </div>

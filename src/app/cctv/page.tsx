@@ -3,32 +3,58 @@
 import { Activity, Sun, CloudRain, ShieldCheck, Wifi, Eye, Thermometer, Wind } from "lucide-react";
 import LiveStreamPlayer from "@/components/LiveStreamPlayer";
 
-const liveFeeds = [
-  {
-    id: 1,
-    videoId: "VID-20260320-WA0015",
-    orientation: "landscape" as const,
-    title: "Main Plot View",
-    location: "Central Survey Zone",
-    coordinates: { lat: "12.9716° N", lng: "77.5946° E" },
-  },
-  {
-    id: 2,
-    videoId: "VID-20260320-WA0017",
-    orientation: "portrait" as const,
-    title: "Entry Gate",
-    location: "North Entrance",
-    coordinates: { lat: "12.9720° N", lng: "77.5950° E" },
-  },
-  {
-    id: 3,
-    videoId: "VID-20260320-WA0006",
-    orientation: "square" as const,
-    title: "North Boundary",
-    location: "Perimeter Fence Line",
-    coordinates: { lat: "12.9725° N", lng: "77.5955° E" },
-  },
+const videoFiles = [
+  "videos/landscape/VID-20260320-WA0015.mp4",
+  "videos/portrait/VID-20260320-WA0017.mp4",
+  "videos/portrait/VID-20260320-WA0023.mp4",
+  "videos/square/VID-20260320-WA0006.mp4",
+  "videos/square/VID-20260320-WA0007.mp4",
+  "videos/square/VID-20260320-WA0014.mp4",
+  "videos/square/VID-20260320-WA0016.mp4",
+  "videos/square/VID-20260320-WA0018.mp4",
+  "videos/square/VID-20260320-WA0019.mp4",
+  "videos/square/VID-20260320-WA0020.mp4",
+  "videos/square/VID-20260320-WA0021.mp4",
+  "videos/square/VID-20260320-WA0022.mp4",
+  "videos/square/VID-20260320-WA0024.mp4",
+  "videos/square/VID-20260320-WA0025.mp4"
 ];
+
+const specificOverride = {
+  "VID-20260320-WA0015": { title: "Main Plot View", location: "Central Survey Zone", coordinates: { lat: "12.9716° N", lng: "77.5946° E" } },
+  "VID-20260320-WA0017": { title: "Entry Gate", location: "North Entrance", coordinates: { lat: "12.9720° N", lng: "77.5950° E" } },
+  "VID-20260320-WA0006": { title: "North Boundary", location: "Perimeter Fence Line", coordinates: { lat: "12.9725° N", lng: "77.5955° E" } }
+} as const;
+
+const specificVideoIds = new Set(Object.keys(specificOverride));
+const sortedFiles = [...videoFiles].sort((a, b) => {
+  const idA = a.split('/').pop()!.replace('.mp4', '');
+  const idB = b.split('/').pop()!.replace('.mp4', '');
+  const aSpecific = specificVideoIds.has(idA) ? 0 : 1;
+  const bSpecific = specificVideoIds.has(idB) ? 0 : 1;
+  if (aSpecific !== bSpecific) return aSpecific - bSpecific;
+  return 0; // maintain original order within groups
+});
+
+const liveFeeds = sortedFiles.map((file, index) => {
+  const videoId = file.split('/').pop()!.replace('.mp4', '');
+  const orientation = file.split('/')[1] as "landscape" | "portrait" | "square";
+  const feed = {
+    id: index + 1,
+    videoId,
+    orientation,
+    title: `Camera ${index + 1}`,
+    location: "Unknown",
+    coordinates: { lat: "0° N", lng: "0° E" }
+  };
+  const override = specificOverride[videoId as keyof typeof specificOverride];
+  if (override) {
+    feed.title = override.title;
+    feed.location = override.location;
+    feed.coordinates = override.coordinates;
+  }
+  return feed;
+});
 
 const statusCards = [
   {

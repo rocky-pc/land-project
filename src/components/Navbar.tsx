@@ -29,6 +29,7 @@ const unitOptions = [
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/cctv", label: "Live CCTV" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/analytics", label: "Plot Analytics" },
   { href: "/portal", label: "Investor Portal" },
   { href: "/district-scatter-map", label: "District Map" },

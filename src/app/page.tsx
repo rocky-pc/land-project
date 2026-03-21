@@ -708,7 +708,7 @@ export default function Home() {
           gap: 0.75rem;
           font-family: 'Space Mono', monospace;
           font-size: 0.58rem;
-          color: #1f2937;
+          color: #b9b9b9ff;
           letter-spacing: 0.12em;
           text-transform: uppercase;
         }

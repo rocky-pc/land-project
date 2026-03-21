@@ -428,7 +428,7 @@ export default function AnalyticsPage() {
 
         /* pH */
         .ph-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;margin-top:.9rem;}
-        .mono-s{font-family:'Space Mono',monospace;font-size:.55rem;color:#1f2937;letter-spacing:.06em;}
+        .mono-s{font-family:'Space Mono',monospace;font-size:.55rem;color: #b9b9b9ff;letter-spacing:.06em;}
         .ph-badge{font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;color:#4ade80;
           background:rgba(74,222,128,.08);padding:.12rem .48rem;border-radius:999px;border:1px solid rgba(74,222,128,.18);}
         .ph-track{height:9px;background:rgba(20,83,45,.4);border-radius:999px;overflow:visible;position:relative;}
@@ -502,7 +502,7 @@ export default function AnalyticsPage() {
         .dim-row{display:flex;gap:.65rem;}
         .dim-box{flex:1;background:rgba(6,20,9,.6);border:1px solid rgba(34,197,94,.09);border-radius:11px;
           padding:.6rem .7rem;display:flex;align-items:center;gap:.35rem;}
-        .dim-lbl{font-size:.58rem;color:#1f2937;text-transform:uppercase;letter-spacing:.1em;}
+        .dim-lbl{font-size:.58rem;color: #b9b9b9ff;text-transform:uppercase;letter-spacing:.1em;}
         .dim-val{font-family:'Space Mono',monospace;font-size:.95rem;font-weight:700;color:#6ee7b7;}
         .plot-vis{flex:1;border-radius:16px;border:1px solid rgba(34,197,94,.09);background:rgba(4,14,5,.55);
           min-height:130px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -528,7 +528,7 @@ export default function AnalyticsPage() {
 
         /* Footer */
         .foot{display:flex;align-items:center;gap:.7rem;padding-bottom:3rem;
-          font-family:'Space Mono',monospace;font-size:.58rem;color:#1f2937;letter-spacing:.12em;text-transform:uppercase;}
+          font-family:'Space Mono',monospace;font-size:.58rem;color: #b9b9b9ff;letter-spacing:.12em;text-transform:uppercase;}
         .ldot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:lpulse 2.2s ease infinite;}
         @keyframes lpulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.4);opacity:1;}50%{box-shadow:0 0 0 5px rgba(34,197,94,0);opacity:.7;}}
         .fsep{color:#111827;}

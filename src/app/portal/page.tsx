@@ -138,7 +138,7 @@ export default function PortalPage() {
         .pp-title em { color: #4ade80; font-style: italic; }
         .pp-sub {
           font-size: 0.82rem;
-          color: #374151;
+          color: #c7c7c7ff;
           margin-top: 0.4rem;
           line-height: 1.55;
         }
@@ -211,7 +211,7 @@ export default function PortalPage() {
         }
         .pp-stat-lbl {
           font-size: 0.65rem;
-          color: #374151;
+          color: #c7c7c7ff;
           margin-top: 2px;
           line-height: 1.3;
         }
@@ -252,7 +252,7 @@ export default function PortalPage() {
         .pp-vault-sub {
           font-family: 'Space Mono', monospace;
           font-size: 0.58rem;
-          color: #374151;
+          color: #c7c7c7ff;
           letter-spacing: 0.06em;
           margin-top: 2px;
         }
@@ -338,7 +338,7 @@ export default function PortalPage() {
         .pp-doc-meta-item {
           font-family: 'Space Mono', monospace;
           font-size: 0.58rem;
-          color: #374151;
+          color: #c7c7c7ff;
           letter-spacing: 0.04em;
         }
         .pp-doc-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(34,197,94,0.2); }

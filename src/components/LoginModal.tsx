@@ -108,7 +108,7 @@ export default function LoginModal({ className = "", onClose }: { className?: st
         .lm-title em { font-style: italic; color: #4ade80; }
         .lm-sub {
           font-size: 0.78rem;
-          color: #374151;
+          color: #c7c7c7ff;
           margin-top: 0.2rem;
           line-height: 1.5;
         }

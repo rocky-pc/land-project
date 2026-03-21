@@ -414,7 +414,7 @@ export default function Home() {
         .stat-lbl {
           font-family: 'Syne', sans-serif;
           font-size: 0.65rem;
-          color: #374151;
+          color: #c7c7c7ff;
           text-align: center;
           letter-spacing: 0.04em;
           text-transform: uppercase;
@@ -455,7 +455,7 @@ export default function Home() {
         .section-sub {
           font-family: 'Syne', sans-serif;
           font-size: 0.88rem;
-          color: #374151;
+          color: #c7c7c7ff;
           text-align: center;
           margin-bottom: 3rem;
           line-height: 1.65;
@@ -547,7 +547,7 @@ export default function Home() {
         .tc-desc {
           font-family: 'Syne', sans-serif;
           font-size: 0.82rem;
-          color: #374151;
+          color: #c7c7c7ff;
           line-height: 1.7;
         }
 
@@ -621,7 +621,7 @@ export default function Home() {
         .fi-desc {
           font-family: 'Syne', sans-serif;
           font-size: 0.75rem;
-          color: #374151;
+          color: #c7c7c7ff;
           line-height: 1.5;
         }
         .fi-arrow {

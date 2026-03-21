@@ -159,7 +159,7 @@ export default function CCTVPage() {
 
         .cctv-sub {
           font-size: 0.88rem;
-          color: #374151;
+          color: #c7c7c7ff;
           margin-top: 0.5rem;
           line-height: 1.65;
           max-width: 420px;
@@ -365,7 +365,7 @@ export default function CCTVPage() {
         .cctv-stat-val {
           font-family: 'Space Mono', monospace;
           font-size: 0.62rem;
-          color: #374151;
+          color: #c7c7c7ff;
           margin-top: 3px;
           letter-spacing: 0.05em;
         }

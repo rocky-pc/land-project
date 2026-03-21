@@ -352,7 +352,7 @@ export default function AnalyticsPage() {
         .h1.v{opacity:1;transform:translateY(0);}
         .h1em{color:#4ade80;font-style:italic;}
 
-        .hsub{font-size:.9rem;color:#374151;line-height:1.75;max-width:460px;margin-top:.9rem;
+        .hsub{font-size:.9rem;color:#c7c7c7ff;line-height:1.75;max-width:460px;margin-top:.9rem;
           opacity:0;transform:translateY(14px);transition:opacity .8s ease .25s,transform .8s ease .25s;}
         .hsub.v{opacity:1;transform:translateY(0);}
 

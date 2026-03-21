@@ -458,8 +458,8 @@ export function Navbar() {
         )}
       </nav>
 
-      {/* Login modal */}
-      {showLogin && <LoginModal />}
+       {/* Login modal */}
+       {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
     </>
   );
 }

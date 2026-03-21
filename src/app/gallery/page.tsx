@@ -97,7 +97,7 @@ export default function GalleryPage() {
 
         .gallery-sub {
           font-size: 0.88rem;
-          color: #c7c7c7ff;
+          color: #b9b9b9ff;
           margin-top: 0.5rem;
           line-height: 1.65;
           max-width: 420px;

@@ -117,7 +117,7 @@ export default function ContactPage() {
 
         .cp-sub {
           font-size: 0.88rem;
-          color: #c7c7c7ff;
+          color: #b9b9b9ff;
           line-height: 1.75;
           margin-bottom: 2.2rem;
           max-width: 420px;
@@ -203,7 +203,7 @@ export default function ContactPage() {
         .cp-c-line {
           font-family: 'Space Mono', monospace;
           font-size: 0.62rem;
-          color: #c7c7c7ff;
+          color: #b9b9b9ff;
           letter-spacing: 0.03em;
           line-height: 1.55;
         }
@@ -347,7 +347,7 @@ export default function ContactPage() {
         }
         .cp-success-sub {
           font-size: 0.8rem;
-          color: #c7c7c7ff;
+          color: #b9b9b9ff;
           line-height: 1.65;
           max-width: 280px;
         }

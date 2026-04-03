@@ -27,12 +27,16 @@ const unitOptions = [
 ];
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/cctv", label: "Live CCTV" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/analytics", label: "Plot Analytics" },
-  { href: "/portal", label: "Investor Portal" },
-  { href: "/district-scatter-map", label: "District Map" },
+  { href: "/", label: "Home", tamil: "முகப்பு" },
+  { href: "/buy", label: "Buy", tamil: "வாங்க" },
+  { href: "/sell", label: "Sell", tamil: "விற்க" },
+  { href: "/rent", label: "Rent", tamil: "வாடகைக்கு" },
+  { href: "/services", label: "Services", tamil: "சேவைகள்" },
+  { href: "/cctv", label: "Live Site View", tamil: "நேரடி கண்காணிப்பு" },
+  { href: "/cities", label: "Cities/Areas", tamil: "நகரங்கள்" },
+  { href: "/properties", label: "Properties", tamil: "சொத்துக்கள்" },
+  { href: "/blog", label: "Blog", tamil: "வலைப்பதிவு" },
+  { href: "/guide", label: "Guide", tamil: "வழிகாட்டி" },
 ];
 
 /* Tiny dropdown hook */
@@ -351,7 +355,7 @@ export function Navbar() {
 
           {/* Desktop nav links */}
           <div className="nb-links">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label, tamil }) => (
               <Link key={href} href={href} className="nb-link">{label}</Link>
             ))}
           </div>
@@ -440,14 +444,14 @@ export function Navbar() {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="nb-mobile">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label, tamil }) => (
               <Link
                 key={href}
                 href={href}
                 className="nb-mob-link"
                 onClick={() => setMobileOpen(false)}
               >
-                🌿 {label}
+                🌿 {label} ({tamil})
               </Link>
             ))}
             <div className="nb-mob-div" />

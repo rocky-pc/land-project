@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ShieldCheck, Banknote, Globe, Leaf, TreePine, MapPin, Eye } from "lucide-react";
@@ -743,7 +743,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div className="hero-badge-dot" />
-              Premium Eco-Luxury Plots · Tamil Nadu
+              Tamil Nadu's Most Trusted Real Estate Platform
             </motion.div>
 
             {/* Title */}
@@ -757,7 +757,7 @@ export default function Home() {
                  உங்கள் நிலம்<br />
                  உங்கள் கையில்
                </div>
-               <em className="hero-title-em">Ungal Nilam Ungal Kaiyil</em>
+               <em className="hero-title-em">Buy, Sell, and Rent in Tamil Nadu</em>
               {/* <span className="hero-title-ta">உங்கள் கையில்</span> */}
             </motion.h1>
 
@@ -768,7 +768,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.38 }}
             >
-              High-end Eco-Luxury real estate plots providing live CCTV monitoring, soil analytics, and verified legal documents — accessible from anywhere in the world.
+              Tamil Nadus Most Trusted Real Estate Platform. We offer Live Land CCTV and Work Progress Videos so you can monitor your investment from anywhere in the world.
             </motion.p>
 
             {/* CTAs */}
@@ -798,10 +798,10 @@ export default function Home() {
         {/* ── Stats band ── */}
         <div className="stats-band" ref={statsSection.ref}>
           <div className="stats-inner">
-            <StatPill value={35}  suffix="+"   label="Districts Covered"  delay={0.05} inView={statsSection.inView} />
-            <StatPill value={100} suffix="%"   label="Legal Clearance"    delay={0.12} inView={statsSection.inView} />
-            <StatPill value={24}  suffix="/7"  label="Live CCTV Uptime"   delay={0.19} inView={statsSection.inView} />
-            <StatPill value={3}   suffix="X"   label="Forex Advantage"    delay={0.26} inView={statsSection.inView} />
+            <StatPill value={35}  suffix="+"   label="Property Types"  delay={0.05} inView={statsSection.inView} />
+            <StatPill value={100} suffix="%"   label="Property Status"    delay={0.12} inView={statsSection.inView} />
+            <StatPill value={24}  suffix="/7"  label="Price Range"   delay={0.19} inView={statsSection.inView} />
+            <StatPill value={3}   suffix="X"   label="Selling"    delay={0.26} inView={statsSection.inView} />
           </div>
         </div>
 
@@ -810,7 +810,7 @@ export default function Home() {
           <div className="trust-inner">
             <div className="section-eyebrow">
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 6px rgba(34,197,94,0.65)", animation: "hb-blink 2s ease infinite" }} />
-              Built for Global Investors
+              What We Offer
             </div>
             <motion.h2
               className="section-title"
@@ -819,7 +819,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Invest with <em>Confidence</em>
+              Our <em>Core Services</em>
             </motion.h2>
             <motion.p
               className="section-sub"
@@ -828,34 +828,34 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Seamless transactions for NRI and international investors. Every plot government-surveyed and FMBC-verified.
+              Find verified properties with expert guidance, sell confidently, rent hassle-free, and monitor your land via Live CCTV.
             </motion.p>
 
             <div className="vine-wrap">
               <div className="vine-l" />
-              <span className="vine-txt">🌿 Nature-First Investment</span>
+              <span className="vine-txt">🌿 Tamil Nadu Real Estate</span>
               <div className="vine-r" />
             </div>
 
             <div className="trust-grid">
               <TrustCard
                 icon={<Globe style={{ width: 22, height: 22 }} />}
-                title="Global Investors"
-                desc="Optimised for NRI and international buyers with fully verified, FEMA-compliant documents ready for due diligence."
+                title="Buying"
+                desc="Find verified properties with expert guidance for the perfect match."
                 delay={0.05}
                 accent="moss"
               />
               <TrustCard
                 icon={<Banknote style={{ width: 22, height: 22 }} />}
-                title="Forex Advantage"
-                desc="Current rates: 1 GBP ≈ ₹105 · 1 USD ≈ ₹83. Capitalise on the exchange rate and invest significantly below UK/US land prices."
+                title="Selling"
+                desc="Sell confidently with top marketing tools and reach serious buyers fast."
                 delay={0.15}
                 accent="teal"
               />
               <TrustCard
                 icon={<ShieldCheck style={{ width: 22, height: 22 }} />}
-                title="Government Surveyed"
-                desc="100% legal clearance with live CCTV monitoring, soil analytics, and real-time GPS boundaries — all from your phone."
+                title="Live Monitoring"
+                desc="View your land via Live CCTV and receive regular work-done progress videos."
                 delay={0.25}
                 accent="sage"
               />
@@ -868,7 +868,7 @@ export default function Home() {
           <div className="features-inner">
             <div className="section-eyebrow" style={{ justifyContent: "flex-start", marginBottom: "0.6rem" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#22c55e", flexShrink: 0, boxShadow: "0 0 6px rgba(34,197,94,0.65)" }} />
-              Explore the Platform
+              Our Services
             </div>
             <motion.h2
               className="section-title"
@@ -878,31 +878,31 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.55 }}
             >
-              Everything you <em>need</em>
+              Why Choose <em>Us</em>
             </motion.h2>
             <p className="section-sub" style={{ textAlign: "left", marginBottom: "2rem" }}>
-              From live surveillance to legal documents — manage your land from anywhere in the world.
+              Live Site Access, Transparency, Direct Approach, and Language Support.
             </p>
 
             <div className="features-grid">
               <FeatureItem
                 icon={<Eye style={{ width: 18, height: 18 }} />}
-                title="Live CCTV Dashboard"
-                desc="Real-time video feeds of your plot streamed globally. End-to-end encrypted."
+                title="Live Site Access"
+                desc="24/7 Live CCTV access to monitored plots and lands."
                 href="/cctv"
                 delay={0.05}
               />
               <FeatureItem
                 icon={<Leaf style={{ width: 18, height: 18 }} />}
-                title="Plot Analytics"
-                desc="Soil health, water table, government survey data and ambient environment metrics."
+                title="Renting"
+                desc="Rent your property hassle-free and connect with reliable tenants quickly."
                 href="/analytics"
                 delay={0.13}
               />
               <FeatureItem
                 icon={<MapPin style={{ width: 18, height: 18 }} />}
-                title="Investor Portal"
-                desc="Secure vault with Patta, EC, FMB Sketch and Legal Opinion — ready for download."
+                title="Transparency"
+                desc="Regular Work Done video updates for construction and layout progress."
                 href="/portal"
                 delay={0.21}
               />
@@ -949,7 +949,7 @@ export default function Home() {
         {/* ── Footer strip ── */}
         <div className="home-footer">
           <div className="hf-dot" />
-          <span>Ungal Nilam Ungal Kaiyil</span>
+          <span>Buy, Sell, and Rent in Tamil Nadu</span>
           <span className="hf-sep">·</span>
           <span>Tamil Nadu · India</span>
           <span className="hf-sep">·</span>
@@ -960,3 +960,30 @@ export default function Home() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

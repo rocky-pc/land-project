@@ -757,7 +757,7 @@ export default function Home() {
                  உங்கள் நிலம்<br />
                  உங்கள் கையில்
                </div>
-               <em className="hero-title-em">Buy, Sell, and Rent in Tamil Nadu</em>
+               <em className="hero-title-em">Ungal Nilam Ungal Kaiyil</em>
               {/* <span className="hero-title-ta">உங்கள் கையில்</span> */}
             </motion.h1>
 
